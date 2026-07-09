@@ -1,0 +1,44 @@
+[
+  {
+    "Lead_ID": "GM-0002",
+    "Date": "2026-07-09T10:10:30.690Z",
+    "Name": "Dhruv Patel ",
+    "Company": "kk tech ",
+    "Email": "patel2102dhruv@gamil.com",
+    "Phone": "9429727500",
+    "Service": "azure",
+    "Budget": "under-10k",
+    "Timeline": "immediate",
+    "Status": "New Lead",
+    "Notes": "Title: test  | Description: testing sir  | Industry: technology",
+    "Documents": ""
+  },
+  {
+    "Lead_ID": "GM-0004",
+    "Date": "2026-07-09T10:33:03.540Z",
+    "Name": "Test User 2",
+    "Company": "kk tech ",
+    "Email": "dhruvil0409modi@gmail.com",
+    "Phone": "9429727500",
+    "Service": "aws",
+    "Budget": "under-10k",
+    "Timeline": "immediate",
+    "Status": "New Lead",
+    "Notes": "Title: testing yrr | Description: testing user  | Industry: technology",
+    "Documents": ""
+  },
+  {
+    "Lead_ID": "GM-0008",
+    "Date": "2026-07-09T11:14:22.818Z",
+    "Name": "KKTECH ",
+    "Company": "KK TECH SOLUTIONS ",
+    "Email": "info@kktechsolutions.in",
+    "Phone": "9429727500",
+    "Service": "azure",
+    "Budget": "under-10k",
+    "Timeline": "immediate",
+    "Status": "New Lead",
+    "Notes": "Title: testing user  | Description: testing user  | Industry: technology",
+    "Documents": ""
+  }
+]
