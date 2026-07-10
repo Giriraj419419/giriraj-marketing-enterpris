@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { 
-  ArrowRight, ShieldCheck, Award, Compass, ExternalLink, Play, Check
+  ArrowRight, ShieldCheck, Award, Compass, ExternalLink, Play, Check,
+  Cloud, Cpu, Layers
 } from 'lucide-react'
 import { FadeIn, TextReveal, StaggerContainer, StaggerItem } from '../components/AnimatedText'
 

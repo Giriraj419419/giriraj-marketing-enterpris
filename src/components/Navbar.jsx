@@ -89,7 +89,13 @@ const MobileDrawerMenu = ({ item, isActivePath, onClose }) => {
     <div className="flex flex-col border-b border-border/50 pb-2 mb-2">
       <Link
         to={item.path}
-        onClick={onClose}
+        onClick={(e) => {
+          if (isActivePath && item.path === window.location.pathname) {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+          onClose();
+        }}
         className={`text-[28px] font-heading font-bold py-3 transition-colors flex justify-between items-center ${isActivePath ? 'text-accent' : 'text-text-primary hover:text-accent'}`}
       >
         {item.name}
@@ -138,6 +144,14 @@ const Navbar = () => {
     setMobileMenuOpen(false)
     setActiveDropdown(null)
   }, [location])
+
+  const handleNavClick = (e, path) => {
+    if (location.pathname === path) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      setMobileMenuOpen(false);
+    }
+  }
 
   // Handle scroll for sticky nav
   useEffect(() => {
@@ -190,7 +204,7 @@ const Navbar = () => {
           }`}
       >
         <div className="container mx-auto px-6 lg:px-12 flex justify-between items-center">
-          <Link to="/" className="flex items-center relative z-50 group py-2">
+          <Link to="/" onClick={(e) => handleNavClick(e, '/')} className="flex items-center relative z-50 group py-2">
             <img src="/logo.png" alt="Giriraj Marketing" className="h-16 md:h-20 object-contain group-hover:opacity-90 transition-opacity duration-300 drop-shadow-sm scale-[1.5] origin-left" />
           </Link>
 
@@ -210,6 +224,7 @@ const Navbar = () => {
                   >
                     <Link
                       to={item.path}
+                      onClick={(e) => handleNavClick(e, item.path)}
                       className={`text-[15px] font-medium tracking-wide transition-all duration-250 flex items-center gap-1.5 hover:scale-102 ${isNavActive || isDropdownOpen ? 'text-text-primary' : 'text-text-secondary hover:text-[#3D523D]'
                         }`}
                     >
