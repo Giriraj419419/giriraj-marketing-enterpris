@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
+    "sync": "powershell ./sync.ps1",
     "dev": "vite",
     "build": "vite build",
     "lint": "oxlint",
