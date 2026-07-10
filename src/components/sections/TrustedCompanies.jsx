@@ -5,7 +5,7 @@ import Registry from '../LogoRegistry'
 const companies = [
   { name: 'Microsoft', logoKey: 'microsoft', desc: 'Global Productivity & Cloud Partner' },
   { name: 'Microsoft Azure', logoKey: 'azure', desc: 'Enterprise Cloud Infrastructure Partner' },
-  { name: 'AWS', logoKey: 'aws', desc: 'Enterprise Cloud Infrastructure Partner' },
+  { name: 'Amazon Web Services', logoKey: 'aws', desc: 'Enterprise Cloud Infrastructure Partner' },
   { name: 'Adobe', logoKey: 'adobe', desc: 'Creative & Document Solutions Partner' },
   { name: 'Autodesk', logoKey: 'autodesk', desc: 'Engineering & Design Technology Partner' },
   { name: 'CorelDRAW', logoKey: 'corel', desc: 'Professional Design & Illustration Partner' },
@@ -77,16 +77,20 @@ export default function TrustedCompanies() {
                   onMouseEnter={() => setHoveredIndex(i)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <div className="relative cursor-pointer transition-all duration-400 ease-out flex items-center justify-center w-[180px] md:w-[220px] lg:w-[260px] h-[110px] rounded-[20px] bg-[rgba(255,255,255,0.65)] backdrop-blur-[16px] border border-[rgba(135,169,135,0.12)] hover:border-[rgba(135,169,135,0.3)] hover:-translate-y-[6px] hover:shadow-[0_20px_50px_rgba(61,82,61,0.08)] group/card">
+                  <div className="relative cursor-pointer transition-all duration-400 ease-out flex items-center gap-5 px-6 md:px-8 w-[280px] md:w-[320px] lg:w-[340px] h-[90px] rounded-[20px] bg-[rgba(255,255,255,0.65)] backdrop-blur-[16px] border border-[rgba(135,169,135,0.12)] hover:border-[rgba(135,169,135,0.3)] hover:-translate-y-[6px] hover:shadow-[0_20px_50px_rgba(61,82,61,0.08)] group/card">
                     
                     {/* Hover Soft Green Glow */}
                     <div className="absolute inset-0 rounded-[20px] bg-[radial-gradient(ellipse_at_center,rgba(135,169,135,0.15)_0%,transparent_70%)] opacity-0 group-hover/card:opacity-100 transition-opacity duration-400 pointer-events-none" />
 
                     {LogoComp && (
-                      <div className="relative z-10 w-full h-full flex items-center justify-center p-6 grayscale opacity-60 group-hover/card:grayscale-0 group-hover/card:opacity-100 transition-all duration-400">
+                      <div className="relative z-10 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center shrink-0 group-hover/card:scale-105 transition-all duration-400">
                         <LogoComp className="w-full h-full object-contain" />
                       </div>
                     )}
+                    
+                    <span className="relative z-10 font-heading font-extrabold text-lg md:text-xl text-[#3D523D] tracking-tight whitespace-nowrap truncate">
+                      {company.name}
+                    </span>
                     
                     {/* Tooltip */}
                     <AnimatePresence>

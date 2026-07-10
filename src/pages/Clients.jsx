@@ -508,22 +508,25 @@ export default function Clients() {
         <div className="relative w-full py-4 bg-[rgba(212,231,212,0.15)] flex w-fit">
           <div className="flex shrink-0 animate-marquee items-center">
             {[
-              { key: 'microsoft' }, { key: 'azure' }, { key: 'aws' }, { key: 'adobe' }, 
-              { key: 'autodesk' }, { key: 'corel' }, { key: 'gstarcad' }, { key: 'zwcad' }, 
-              { key: 'lenovo' }, { key: 'hpe' }, { key: 'dell' },
-              { key: 'microsoft' }, { key: 'azure' }, { key: 'aws' }, { key: 'adobe' }, 
-              { key: 'autodesk' }, { key: 'corel' }, { key: 'gstarcad' }, { key: 'zwcad' }, 
-              { key: 'lenovo' }, { key: 'hpe' }, { key: 'dell' }
+              { key: 'microsoft', name: 'Microsoft' }, { key: 'azure', name: 'Microsoft Azure' }, { key: 'aws', name: 'Amazon Web Services' }, { key: 'adobe', name: 'Adobe' }, 
+              { key: 'autodesk', name: 'Autodesk' }, { key: 'corel', name: 'CorelDRAW' }, { key: 'gstarcad', name: 'GstarCAD' }, { key: 'zwcad', name: 'ZWCAD' }, 
+              { key: 'lenovo', name: 'Lenovo' }, { key: 'hpe', name: 'HPE' }, { key: 'dell', name: 'Dell' },
+              { key: 'microsoft', name: 'Microsoft' }, { key: 'azure', name: 'Microsoft Azure' }, { key: 'aws', name: 'Amazon Web Services' }, { key: 'adobe', name: 'Adobe' }, 
+              { key: 'autodesk', name: 'Autodesk' }, { key: 'corel', name: 'CorelDRAW' }, { key: 'gstarcad', name: 'GstarCAD' }, { key: 'zwcad', name: 'ZWCAD' }, 
+              { key: 'lenovo', name: 'Lenovo' }, { key: 'hpe', name: 'HPE' }, { key: 'dell', name: 'Dell' }
             ].map((company, i) => {
               const LogoComp = Registry[company.key]
               return (
-                <div key={i} className="px-6 md:px-10 flex items-center justify-center">
-                  <div className="relative w-[140px] md:w-[180px] h-[60px] md:h-[80px] flex items-center justify-center group/card cursor-pointer">
+                <div key={i} className="px-8 md:px-12 flex items-center justify-center">
+                  <div className="flex items-center gap-4 group/card cursor-pointer">
                     {LogoComp && (
-                      <div className="relative z-10 w-full h-full flex items-center justify-center grayscale opacity-60 group-hover/card:grayscale-0 group-hover/card:opacity-100 transition-all duration-400">
+                      <div className="relative w-12 h-12 md:w-14 md:h-14 flex items-center justify-center transition-transform duration-300 hover:scale-105 shrink-0">
                         <LogoComp className="w-full h-full object-contain" />
                       </div>
                     )}
+                    <span className="font-heading font-extrabold text-lg md:text-xl text-[#3D523D] tracking-tight whitespace-nowrap">
+                      {company.name}
+                    </span>
                   </div>
                 </div>
               )
