@@ -13,10 +13,11 @@ const companies = [
   { name: 'ZWCAD', logoKey: 'zwcad', desc: 'Reliable CAD Software Partner' },
   { name: 'Lenovo', logoKey: 'lenovo', desc: 'Enterprise Hardware & Infrastructure Partner' },
   { name: 'HPE', logoKey: 'hpe', desc: 'Enterprise Server & Storage Partner' },
+  { name: 'Dell', logoKey: 'dell', desc: 'Enterprise IT Solutions Partner' },
 ]
 
-// Duplicate for seamless infinite scroll
-const marqueeItems = [...companies, ...companies, ...companies]
+// Duplicate for seamless infinite scroll (-50% translation)
+const marqueeItems = [...companies, ...companies]
 
 export default function TrustedCompanies() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
@@ -62,9 +63,9 @@ export default function TrustedCompanies() {
         <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-[#F8FAF8] to-transparent z-30 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-[#F8FAF8] to-transparent z-30 pointer-events-none" />
 
-        {/* CSS Marquee container with pause-on-hover */}
-        <div className="group flex w-fit">
-          <div className="flex shrink-0 animate-marquee group-hover:[animation-play-state:paused]">
+        {/* CSS Marquee container WITHOUT pause-on-hover */}
+        <div className="flex w-fit">
+          <div className="flex shrink-0 animate-marquee items-center">
             {marqueeItems.map((company, i) => {
               const LogoComp = Registry[company.logoKey]
               const isHovered = hoveredIndex === i;
@@ -82,7 +83,7 @@ export default function TrustedCompanies() {
                     <div className="absolute inset-0 rounded-[20px] bg-[radial-gradient(ellipse_at_center,rgba(135,169,135,0.15)_0%,transparent_70%)] opacity-0 group-hover/card:opacity-100 transition-opacity duration-400 pointer-events-none" />
 
                     {LogoComp && (
-                      <div className="relative z-10 w-full h-full flex items-center justify-center p-6 opacity-80 group-hover/card:opacity-100 group-hover/card:scale-105 transition-all duration-400">
+                      <div className="relative z-10 w-full h-full flex items-center justify-center p-6 grayscale opacity-60 group-hover/card:grayscale-0 group-hover/card:opacity-100 transition-all duration-400">
                         <LogoComp className="w-full h-full object-contain" />
                       </div>
                     )}

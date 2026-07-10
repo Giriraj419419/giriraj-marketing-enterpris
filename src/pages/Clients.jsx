@@ -6,6 +6,7 @@ import {
   Cloud, Cpu, Layers
 } from 'lucide-react'
 import { FadeIn, TextReveal, StaggerContainer, StaggerItem } from '../components/AnimatedText'
+import Registry from '../components/LogoRegistry'
 
 // Official inline SVGs for fallback automation
 const Logopaths = {
@@ -495,23 +496,38 @@ export default function Clients() {
       {/* ==========================================
           3. CLIENT ECOSYSTEM WALL (Marquee Showcase)
           ========================================== */}
-      <section className="relative z-10 py-16 bg-[#FDFBF7] border-y border-[#E6E2DA]">
+      <section className="relative z-10 py-16 bg-[#FDFBF7] border-y border-[#E6E2DA] overflow-hidden">
         <div className="container mx-auto px-6 mb-10 text-center">
           <p className="text-xs font-bold text-text-secondary uppercase tracking-widest">Authorized Integration Partners</p>
         </div>
-        <div className="relative w-full overflow-hidden py-4 bg-[rgba(212,231,212,0.20)]">
-          <div className="flex gap-20 items-center justify-around whitespace-nowrap animate-fade-in px-10">
-            {partnersList.map((partner, i) => (
-              <div 
-                key={i} 
-                className="flex items-center gap-3 grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300 transform hover:scale-105 cursor-pointer"
-              >
-                <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center border border-[#87A987]/15">
-                  <span className="text-[#87A987] font-bold font-heading text-sm">{partner.name[0]}</span>
+        
+        {/* Gradient Fade Masks */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-[#FDFBF7] to-transparent z-30 pointer-events-none" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-[#FDFBF7] to-transparent z-30 pointer-events-none" />
+
+        <div className="relative w-full py-4 bg-[rgba(212,231,212,0.15)] flex w-fit">
+          <div className="flex shrink-0 animate-marquee items-center">
+            {[
+              { key: 'microsoft' }, { key: 'azure' }, { key: 'aws' }, { key: 'adobe' }, 
+              { key: 'autodesk' }, { key: 'corel' }, { key: 'gstarcad' }, { key: 'zwcad' }, 
+              { key: 'lenovo' }, { key: 'hpe' }, { key: 'dell' },
+              { key: 'microsoft' }, { key: 'azure' }, { key: 'aws' }, { key: 'adobe' }, 
+              { key: 'autodesk' }, { key: 'corel' }, { key: 'gstarcad' }, { key: 'zwcad' }, 
+              { key: 'lenovo' }, { key: 'hpe' }, { key: 'dell' }
+            ].map((company, i) => {
+              const LogoComp = Registry[company.key]
+              return (
+                <div key={i} className="px-6 md:px-10 flex items-center justify-center">
+                  <div className="relative w-[140px] md:w-[180px] h-[60px] md:h-[80px] flex items-center justify-center group/card cursor-pointer">
+                    {LogoComp && (
+                      <div className="relative z-10 w-full h-full flex items-center justify-center grayscale opacity-60 group-hover/card:grayscale-0 group-hover/card:opacity-100 transition-all duration-400">
+                        <LogoComp className="w-full h-full object-contain" />
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <span className="font-heading font-extrabold text-[#3D523D] tracking-tight">{partner.name}</span>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
