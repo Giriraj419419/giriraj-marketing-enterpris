@@ -50,8 +50,12 @@ const SubmissionSuccess = ({ formData }) => {
           className="bg-[#FDFBF7] border border-[#87A987]/20 rounded-2xl p-6 w-full max-w-sm mb-10"
         >
           <p className="text-xs text-text-secondary uppercase font-bold tracking-widest mb-2">Your Lead Reference</p>
-          <p className="text-3xl font-heading font-extrabold text-[#3D523D] tracking-wider">
+          <p className="text-3xl font-heading font-extrabold text-[#3D523D] tracking-wider mb-6">
             {formData.leadId || 'GM-0001'}
+          </p>
+          <p className="text-xs text-text-secondary uppercase font-bold tracking-widest mb-2">Project Budget</p>
+          <p className="text-xl font-heading font-extrabold text-[#3D523D] tracking-wider">
+            ₹{formData.projectBudget || '0'}
           </p>
         </motion.div>
 

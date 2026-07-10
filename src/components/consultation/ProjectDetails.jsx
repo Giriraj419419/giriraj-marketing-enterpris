@@ -81,30 +81,23 @@ const ProjectDetails = ({ formData, updateFormData, onNext, onBack }) => {
              <div className="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-text-muted group-focus-within:text-accent transition-colors z-20">
                <span className="font-extrabold text-sm text-text-muted group-focus-within:text-accent">₹</span>
              </div>
-             <select
-               id="budget"
-               value={formData.budget || ''}
-               onChange={(e) => handleChange('budget', e.target.value)}
-               className={`block w-full pl-12 pr-4 py-4 bg-white border border-[#87A987]/20 rounded-xl appearance-none focus:outline-none focus:border-[#87A987] focus:shadow-[0_0_0_4px_rgba(135,169,135,0.15)] peer transition-all shadow-sm cursor-pointer relative z-10 ${formData.budget ? 'text-[#3D523D] font-bold' : 'text-transparent'}`}
-             >
-               <option value="" disabled className="bg-white text-text-muted">Select an option</option>
-               <option value="under-10k" className="bg-white text-[#3D523D]">Under ₹10,00,000</option>
-               <option value="10k-50k" className="bg-white text-[#3D523D]">₹10,00,000 - ₹50,00,000</option>
-               <option value="50k-250k" className="bg-white text-[#3D523D]">₹50,00,000 - ₹2.5 Crore</option>
-               <option value="250k+" className="bg-white text-[#3D523D]">₹2.5 Crore +</option>
-               <option value="tbd" className="bg-white text-[#3D523D]">To Be Determined</option>
-             </select>
+             <input
+               type="number"
+               id="projectBudget"
+               required
+               min="1"
+               step="any"
+               value={formData.projectBudget || ''}
+               onChange={(e) => handleChange('projectBudget', e.target.value)}
+               placeholder="Enter your estimated project budget"
+               className="block w-full pl-10 pr-4 py-4 bg-white border border-[#87A987]/20 rounded-xl text-[#3D523D] appearance-none focus:outline-none focus:border-[#87A987] focus:shadow-[0_0_0_4px_rgba(135,169,135,0.15)] peer transition-all shadow-sm placeholder:text-transparent focus:placeholder:text-text-muted"
+             />
              <label
-               htmlFor="budget"
-               className={`absolute text-text-secondary duration-300 transform z-0 top-2 left-12 origin-[0] pointer-events-none text-sm font-medium ${formData.budget ? '-translate-y-4 scale-75' : 'translate-y-2.5 scale-100'} peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-accent peer-focus:z-20`}
+               htmlFor="projectBudget"
+               className="absolute text-text-secondary duration-300 transform -translate-y-4 scale-75 top-2 left-10 z-10 origin-[0] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-2.5 peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-accent pointer-events-none text-sm font-medium"
              >
-               Estimated Budget
+               Project Budget (₹)
              </label>
-             <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none text-text-muted z-20">
-               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                 <path d="M6 9L12 15L18 9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-               </svg>
-             </div>
           </div>
         </div>
 

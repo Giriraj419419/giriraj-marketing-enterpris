@@ -52,7 +52,7 @@ const Contact = () => {
       data.append('email', formData.email || '');
       data.append('phone', formData.phone || '');
       data.append('serviceCategory', formData.services ? formData.services.join(', ') : '');
-      data.append('budget', formData.budget || '');
+      data.append('projectBudget', formData.projectBudget || '');
       data.append('timeline', formData.timeline || '');
       
       const details = [];
@@ -72,8 +72,7 @@ const Contact = () => {
 
       console.log("Sending API Request to /api/leads");
       
-      const apiUrl = import.meta.env.DEV ? 'http://localhost:5000' : '';
-      const response = await fetch(`${apiUrl}/api/leads`, {
+      const response = await fetch(`/api/leads`, {
         method: 'POST',
         body: data,
       });
@@ -229,12 +228,12 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Global Offices */}
+      {/* Our Office */}
       <section className="py-24 bg-[rgba(212,231,212,0.20)] relative border-t border-b border-[#E6E2DA]">
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-heading font-extrabold mb-4 text-[#3D523D]">Global Offices</h2>
-            <p className="text-text-secondary text-lg font-light">Visit our innovation centers or reach out directly.</p>
+            <h2 className="text-4xl font-heading font-extrabold mb-4 text-[#3D523D]">Our Office</h2>
+            <p className="text-text-secondary text-lg font-light">Visit our innovation center or reach out directly.</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-16 items-start">
@@ -248,30 +247,12 @@ const Contact = () => {
                 <p className="text-text-secondary text-[15px] font-medium ml-8 group-hover:text-text-primary transition-colors">
                   713, Shilp Arista, Sindhu Bhavan Road,<br />Bodakdev, Ahmedabad, Gujarat 380054
                 </p>
-                <div className="space-y-3">
+                <div className="space-y-3 mt-6 ml-8">
                   <a href="tel:+919638419419" className="flex items-center gap-3 text-text-primary hover:text-accent transition-colors">
                     <FiPhone className="text-[#87A987]" /> +91 96384 19419
                   </a>
                   <a href="mailto:info@girirajmktg.com" className="flex items-center gap-3 text-text-primary hover:text-accent transition-colors">
                     <FiMail className="text-[#87A987]" /> info@girirajmktg.com
-                  </a>
-                  <p className="flex items-center gap-3 text-text-secondary">
-                    <FiClock className="text-text-secondary/70" /> Mon-Fri: 9:00 AM - 6:00 PM (IST)
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-white/65 border border-[#87A987]/12 rounded-3xl p-8 backdrop-blur-md hover:border-accent transition-all duration-300 shadow-sm">
-                <h3 className="text-2xl font-heading font-extrabold mb-3 flex items-center gap-3 text-[#3D523D]">
-                  <FiMapPin className="text-[#87A987]" /> Strategic Branch (Delhi)
-                </h3>
-                <p className="text-text-secondary mb-6 leading-relaxed text-sm font-light">
-                  Government & Public Sector Relations<br />
-                  Connaught Place, New Delhi, India 110001
-                </p>
-                <div className="space-y-3">
-                  <a href="tel:+919638419419" className="flex items-center gap-3 text-text-primary hover:text-accent transition-colors">
-                    <FiPhone className="text-[#87A987]" /> +91 96384 19419
                   </a>
                   <p className="flex items-center gap-3 text-text-secondary">
                     <FiClock className="text-text-secondary/70" /> Mon-Fri: 9:00 AM - 6:00 PM (IST)
@@ -291,7 +272,7 @@ const Contact = () => {
               </div>
               
               <iframe 
-                src="https://maps.google.com/maps?q=713,+Shilp+Arista,+Sindhu+Bhavan+Road,+Bodakdev,+Ahmedabad&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                src="https://maps.google.com/maps?q=713+Shilp+Arista+Sindhu+Bhavan+Road+Bodakdev+Ahmedabad+Gujarat+380054&t=&z=15&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
  
                 height="100%" 

@@ -7,26 +7,17 @@ const express = require('express');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const leadsRouter = require('./routes/leads');
-const path = require('path');
-const fs = require('fs');
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Ensure uploads directory exists
-const uploadDir = path.join(__dirname, 'uploads');
-if (!fs.existsSync(uploadDir)) {
-  fs.mkdirSync(uploadDir);
-}
-
 // Middleware
 app.use(cors({
-  origin: 'http://localhost:5173', // Allow frontend origin
+  origin: ['http://localhost:5173', 'https://girirajmktg.com'], // Allow local and prod origins
   credentials: true
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/uploads', express.static(uploadDir));
 
 // Rate Limiting to prevent spam
 const apiLimiter = rateLimit({
@@ -37,8 +28,8 @@ const apiLimiter = rateLimit({
 
 app.use('/api/leads', apiLimiter, leadsRouter);
 
-app.get('/health', (req, res) => {
-  res.json({ status: 'OK', message: 'Giriraj Lead Management Server Running' });
+app.get('/api/health', (req, res) => {
+  res.json({ status: 'OK', message: 'Giriraj Lead Management Server Running on Vercel' });
 });
 
 // Export for Vercel Serverless

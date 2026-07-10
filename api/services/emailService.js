@@ -6,9 +6,10 @@ class EmailService {
   }
 
   async sendLeadConfirmationToClient(lead) {
+    console.log("SENDING CUSTOMER EMAIL");
     try {
       const { data, error } = await this.resend.emails.send({
-        from: 'Giriraj Marketing <no-reply@girirajmktg.com>',
+        from: 'Giriraj Marketing <noreply@girirajmktg.com>',
         to: lead.email,
         subject: 'Thank You for Contacting Giriraj Marketing',
         html: `
@@ -33,6 +34,7 @@ class EmailService {
         throw error;
       }
 
+      console.log("CUSTOMER EMAIL SUCCESS");
       console.log(`Client Confirmation Email sent: ${data?.id}`);
       return data;
     } catch (error) {
@@ -41,12 +43,14 @@ class EmailService {
     }
   }
 
-  async sendInternalLeadNotification(lead, fileLinks) {
+  async sendInternalLeadNotification(lead, attachments = []) {
+    console.log("SENDING SALES EMAIL");
     try {
       const { data, error } = await this.resend.emails.send({
-        from: 'Giriraj System <system@girirajmktg.com>',
+        from: 'Giriraj System <info@girirajmktg.com>',
         to: process.env.INTERNAL_SALES_EMAIL || 'umang@kktechsolutions.in',
         subject: '🚀 New Lead Received - Giriraj Website',
+        attachments: attachments,
         html: `
           <div style="font-family: Arial, sans-serif; color: #333;">
             <h2 style="color: #01A982;">New Lead Received</h2>
@@ -58,18 +62,15 @@ class EmailService {
               <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f9f9f9;"><strong>Email:</strong></td><td style="padding: 10px; border: 1px solid #ddd;">${lead.email}</td></tr>
               <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f9f9f9;"><strong>Phone:</strong></td><td style="padding: 10px; border: 1px solid #ddd;">${lead.phone}</td></tr>
               <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f9f9f9;"><strong>Service:</strong></td><td style="padding: 10px; border: 1px solid #ddd;">${lead.serviceCategory}</td></tr>
-              <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f9f9f9;"><strong>Budget:</strong></td><td style="padding: 10px; border: 1px solid #ddd;">${lead.budget}</td></tr>
+              <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f9f9f9;"><strong>Budget:</strong></td><td style="padding: 10px; border: 1px solid #ddd;">₹${lead.projectBudget}</td></tr>
               <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f9f9f9;"><strong>Timeline:</strong></td><td style="padding: 10px; border: 1px solid #ddd;">${lead.timeline}</td></tr>
               <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f9f9f9;"><strong>Message/Details:</strong></td><td style="padding: 10px; border: 1px solid #ddd;">${lead.projectDetails || 'None'}</td></tr>
               <tr><td style="padding: 10px; border: 1px solid #ddd; background: #f9f9f9;"><strong>Submission Date:</strong></td><td style="padding: 10px; border: 1px solid #ddd;">${new Date().toLocaleString()}</td></tr>
             </table>
-            ${fileLinks.length > 0 ? `
-              <h3 style="margin-top: 20px;">Uploaded Documents:</h3>
-              <ul>
-                ${fileLinks.map(link => `<li><a href="${link}">${link}</a></li>`).join('')}
-              </ul>
+            ${attachments.length > 0 ? `
+              <h3 style="margin-top: 20px;">Attached Documents:</h3>
+              <p>See the files attached directly to this email.</p>
             ` : ''}
-            </table>
           </div>
         `
       });
@@ -78,6 +79,7 @@ class EmailService {
         throw error;
       }
 
+      console.log("SALES EMAIL SUCCESS");
       console.log(`Internal Notification Email sent: ${data?.id}`);
       return data;
     } catch (error) {

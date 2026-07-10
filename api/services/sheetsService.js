@@ -8,6 +8,7 @@ class SheetsService {
     }
 
     try {
+      console.log("SENDING TO GOOGLE SHEETS");
       // The Apps script handles POST requests and parses the body.
       // Usually, Google Apps Script Web Apps prefer application/json or application/x-www-form-urlencoded
       const response = await fetch(appsScriptUrl, {
@@ -25,6 +26,7 @@ class SheetsService {
       }
 
       const resultText = await response.text();
+      console.log("GOOGLE SHEETS SUCCESS");
       console.log('Successfully saved to Google Sheets via Apps Script:', resultText);
     } catch (err) {
       console.error('Failed to append to Google Sheet', err);
