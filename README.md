@@ -1,16 +1,317 @@
-# React + Vite
+# Giriraj Marketing
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+<div align="center">
 
-Currently, two official plugins are available:
+![Giriraj Marketing](public/logo.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Enterprise IT Infrastructure, Software Licensing & Digital Transformation Solutions
 
-## React Compiler
+Empowering businesses with world-class technology solutions, software licensing, cloud infrastructure, cybersecurity, and enterprise digital transformation services.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🌐 Website: https://www.girirajmktg.com  
+📍 Ahmedabad, Gujarat, India  
+📧 info@girirajmktg.com  
+📞 +91 96384 19419
 
-## Expanding the Oxlint configuration
+</div>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+---
+
+# About Giriraj Marketing
+
+Giriraj Marketing is a trusted enterprise technology partner specializing in software licensing, cloud solutions, IT infrastructure, cybersecurity, and digital transformation services.
+
+We help organizations modernize their technology ecosystems through strategic partnerships with leading global technology providers such as Microsoft, Adobe, Autodesk, AWS, Corel, ZWCAD, GstarCAD, and other enterprise software vendors.
+
+Our mission is to deliver scalable, secure, and cost-effective technology solutions that drive business growth and operational excellence.
+
+---
+
+# Core Services
+
+## Software Licensing
+
+- Microsoft Solutions
+- Adobe Solutions
+- Autodesk Solutions
+- CorelDRAW Graphics Suite
+- ZWCAD Solutions
+- GstarCAD Solutions
+
+## Cloud Solutions
+
+- Microsoft Azure
+- Amazon Web Services (AWS)
+- Cloud Migration
+- Cloud Infrastructure Design
+- Cloud Security
+
+## Enterprise IT Infrastructure
+
+- Server Solutions
+- Virtualization
+- Enterprise Networking
+- Hybrid Infrastructure
+- Data Center Solutions
+
+## Cybersecurity
+
+- Endpoint Protection
+- Security Monitoring
+- Threat Detection
+- Identity Management
+- Compliance Solutions
+
+## Technical Consulting
+
+- IT Strategy
+- Digital Transformation
+- Technology Assessment
+- Infrastructure Planning
+- Enterprise Architecture
+
+---
+
+# Technology Ecosystem
+
+Giriraj Marketing delivers solutions across:
+
+- Cloud Infrastructure
+- Enterprise Systems
+- Cybersecurity
+- Compute Solutions
+- Technical Support
+- Digital Transformation
+- Software Licensing
+- IT Consulting
+
+---
+
+# Project Overview
+
+This repository contains the official Giriraj Marketing website built with modern web technologies and optimized for performance, scalability, and enterprise-grade user experience.
+
+Key features include:
+
+- Responsive Design
+- Premium UI/UX
+- Enterprise Service Showcase
+- Consultation Booking System
+- Lead Management Workflow
+- Email Automation
+- Google Sheets Integration
+- WhatsApp Integration
+- SEO Optimization
+- Vercel Deployment
+
+---
+
+# Tech Stack
+
+## Frontend Framework
+
+- React 19
+- Vite
+
+## Styling
+
+- Tailwind CSS
+- Custom CSS
+- Responsive Design System
+
+## Animations
+
+- Framer Motion
+- GSAP
+- Lenis Smooth Scrolling
+
+## Routing
+
+- React Router DOM
+
+## Icons
+
+- Lucide React
+- React Icons
+
+## UI Components
+
+- Custom Component Architecture
+- Reusable Design System
+- Enterprise UI Patterns
+
+---
+
+# Backend & Integrations
+
+## Lead Management
+
+- Custom Lead Collection API
+- Form Validation
+- Lead Tracking
+
+## Email Automation
+
+- Resend API
+- Customer Confirmation Emails
+- Internal Lead Notifications
+
+## Database & Storage
+
+- Google Sheets Integration
+- CSV Backup Support
+
+## File Uploads
+
+- Multer
+- Form Data Processing
+
+---
+
+# Deployment
+
+## Hosting Platform
+
+- Vercel
+
+## Environment Variables
+
+Required environment variables:
+
+```env
+RESEND_API_KEY=
+GOOGLE_APPS_SCRIPT_URL=
+INTERNAL_SALES_EMAIL=
+FROM_EMAIL=
+COMPANY_NAME=
+WEBSITE_URL=
+```
+
+---
+
+# Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/giriraj-marketing.git
+```
+
+Navigate to project:
+
+```bash
+cd giriraj-marketing
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start development server:
+
+```bash
+npm run dev
+```
+
+Build production version:
+
+```bash
+npm run build
+```
+
+Preview production build:
+
+```bash
+npm run preview
+```
+
+---
+
+# Project Structure
+
+```plaintext
+giriraj-marketing/
+│
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── hooks/
+│   ├── context/
+│   └── assets/
+│
+├── api/
+│   ├── routes/
+│   └── services/
+│
+├── vercel.json
+├── package.json
+└── vite.config.js
+```
+
+---
+
+# Business Information
+
+### Headquarters
+
+713, Shilp Arista  
+Sindhu Bhavan Road  
+Bodakdev, Ahmedabad  
+Gujarat 380054  
+India
+
+📞 +91 96384 19419  
+📧 info@girirajmktg.com
+
+### Working Hours
+
+Monday – Friday  
+9:00 AM – 6:00 PM (IST)
+
+---
+
+# Why Choose Giriraj Marketing
+
+- Authorized Technology Partnerships
+- Enterprise-Grade Solutions
+- Experienced Technical Team
+- End-to-End Implementation
+- Dedicated Technical Support
+- Scalable Business Solutions
+- Competitive Licensing Programs
+- Customer-Centric Approach
+
+---
+
+# Future Roadmap
+
+- Advanced CRM Integration
+- Marketing Automation
+- AI-Powered Lead Management
+- Analytics Dashboard
+- Client Portal
+- Enhanced SEO Infrastructure
+- Expanded Cloud Services
+
+---
+
+# License
+
+© Giriraj Marketing. All Rights Reserved.
+
+This repository contains proprietary company assets, branding, and business information.
+
+Unauthorized reproduction, distribution, or commercial use is prohibited.
+
+---
+
+<div align="center">
+
+### Giriraj Marketing
+
+Enterprise IT Infrastructure • Software Licensing • Cloud Solutions • Digital Transformation
+
+</div>
