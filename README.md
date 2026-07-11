@@ -2,7 +2,6 @@
 
 <div align="center">
 
-![Giriraj Marketing](public/logo.png)
 
 ### Enterprise IT Infrastructure, Software Licensing & Digital Transformation Solutions
 
