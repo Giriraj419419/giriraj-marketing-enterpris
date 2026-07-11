@@ -6,6 +6,7 @@ import { FiArrowRight, FiCheck, FiPenTool } from 'react-icons/fi';
 import { Reveal, SectionTitle, Eyebrow, StaggerContainer, StaggerItem, TextReveal } from '../../components/Section';
 import EnterpriseCTA from '../../components/EnterpriseCTA';
 import { AnimatedCounter, PremiumGlassCard, FloatingOrbs, OfficialLogoIcon } from '../../components/PremiumServiceComponents';
+import SEO from '../../components/SEO';
 
 // =========================================================================
 // DATA ARRAYS
@@ -35,7 +36,8 @@ export default function AdobeSolutions() {
   const yParallax = useTransform(scrollY, [0, 1000], [0, -100]);
 
   return (
-    <div className="relative min-h-screen bg-bg-primary overflow-hidden selection:bg-accent/30 selection:text-text-primary">
+    <div className="relative min-h-screen bg-bg-primary overflow-hidden selection:bg-[#FF0000]/30 selection:text-text-primary">
+      <SEO title="Adobe Solutions" description="Empower your creative teams with Adobe Creative Cloud enterprise licensing and management." url="/services/adobe" />
 
       {/* Background */}
       <FloatingOrbs />

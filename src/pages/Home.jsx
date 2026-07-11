@@ -7,10 +7,12 @@ import IndustrySolutions from '../components/sections/IndustrySolutions'
 import Statistics from '../components/sections/Statistics'
 import FAQ from '../components/sections/FAQ'
 import AuroraSection from '../components/effects/AuroraSection'
+import SEO from '../components/SEO'
 
 const Home = () => {
   return (
     <div>
+      <SEO url="/" />
       <AuroraSection intensity={1.0}>
         <HeroSection />
       </AuroraSection>

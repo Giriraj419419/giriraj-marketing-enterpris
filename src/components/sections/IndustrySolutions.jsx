@@ -63,8 +63,6 @@ const IndustrySolutions = () => {
     offset: ["start end", "end start"]
   })
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "20%"])
-
   const industries = [
     {
       title: 'Finance & Fintech',

@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { FadeIn } from '../AnimatedText'
 import { MagneticButton } from '../MagneticButton'
 import { useMousePosition } from '../../hooks/useMousePosition'

@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, AnimatePresence, useInView } from 'framer-motion'
-import { FiMail, FiPhone, FiMapPin, FiArrowRight, FiLinkedin, FiSend, FiCheck } from 'react-icons/fi'
+import { FiMail, FiPhone, FiMapPin, FiArrowRight, FiLinkedin, FiSend } from 'react-icons/fi'
 import {
   MicrosoftLogo, AzureLogo, AWSLogo, AdobeLogo, AutodeskLogo,
   ZWCADLogo, GstarCADLogo, CorelLogo

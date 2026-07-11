@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { FadeIn } from '../AnimatedText'
 import { FiMonitor, FiTool, FiBriefcase, FiHeart, FiBook, FiDollarSign, FiShoppingCart, FiShield, FiCpu } from 'react-icons/fi'
 

@@ -6,6 +6,7 @@ import {
 import { Reveal, SectionTitle, Eyebrow, StaggerContainer, StaggerItem, TextReveal } from '../components/Section';
 import { CosmosField, GlowingOrbs, TiltCard, SectionGlow } from '../components/Atmosphere';
 import EnterpriseCTA from '../components/EnterpriseCTA';
+import SEO from '../components/SEO';
 
 const stats = [
   { val: '10+', label: 'Years Experience', icon: Award },
@@ -23,14 +24,15 @@ const values = [
 
 const timeline = [
   { year: '2015', title: 'The Foundation', desc: 'KK Tech was founded with a vision to deliver premium enterprise infrastructure and licensing solutions.' },
-  { year: '2018', title: 'Strategic Growth', desc: 'Acquired key partnerships with Microsoft, AWS, and Adobe, expanding our certified consultant base.' },
-  { year: '2021', title: 'Global Operations', desc: 'Expanded infrastructure deployments to international workspaces, delivering low-latency cloud architectures.' },
-  { year: '2026', title: 'Next-Gen Platforms', desc: 'Unifying cloud migration services with AI-driven operations for ₹100Cr+ enterprises.' }
+  { year: '2018', title: 'Global Partnerships', desc: 'Secured Tier-1 integrations with Microsoft, AWS, and Adobe for large scale cloud transitions.' },
+  { year: '2021', title: 'Enterprise Shift', desc: 'Launched specialized on-premise to hybrid cloud migration divisions.' },
+  { year: '2024', title: 'Industry Leadership', desc: 'Recognized as a premier implementation partner for over 500 enterprise clients worldwide.' },
 ];
 
 export default function About() {
   return (
     <div className="relative min-h-screen bg-[#FDFBF7]">
+      <SEO title="About Us" description="Learn about Giriraj Marketing's history, values, and our journey as a leading enterprise infrastructure partner." url="/about-us" />
       <CosmosField />
       <GlowingOrbs />
 

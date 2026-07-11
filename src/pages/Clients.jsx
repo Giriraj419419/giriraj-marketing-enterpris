@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { 
-  ArrowRight, ShieldCheck, Award, Compass, ExternalLink, Play, Check,
-  Cloud, Cpu, Layers
+  ArrowRight, ShieldCheck, Award, Compass, Play,
+  Cloud, Cpu, Layers, Headphones
 } from 'lucide-react'
-import { FadeIn, TextReveal, StaggerContainer, StaggerItem } from '../components/AnimatedText'
+import { FadeIn, TextReveal } from '../components/AnimatedText'
 import Registry from '../components/LogoRegistry'
+import SEO from '../components/SEO'
 
 // Official inline SVGs for fallback automation
 const Logopaths = {
@@ -375,6 +376,7 @@ export default function Clients() {
 
   return (
     <div className="relative min-h-screen bg-[#FDFBF7] overflow-hidden">
+      <SEO title="Clients & Partners" description="See the enterprise clients and integration partners who trust Giriraj Marketing." url="/clients" />
       
       {/* Mesh Background */}
       <div className="absolute inset-0 pointer-events-none z-0">
@@ -424,45 +426,101 @@ export default function Clients() {
             </div>
 
             {/* Right Hero Visual: Ecosystem Node Flow */}
-            <div className="lg:col-span-5 relative flex justify-center items-center h-[400px]">
-              <div className="absolute inset-0 bg-[#D4E7D4]/10 rounded-full blur-[80px] z-0" />
+            <div className="lg:col-span-5 relative flex justify-center items-center h-[500px]">
+              <div className="absolute inset-0 bg-[#D4E7D4]/20 rounded-full blur-[100px] z-0" />
               
-              <div className="relative w-full max-w-sm h-full flex items-center justify-center z-10">
-                <div className="w-24 h-24 rounded-full bg-white border border-[#87A987]/30 shadow-lg flex items-center justify-center font-heading font-extrabold text-accent relative z-20">
-                  GIRIRAJ
-                </div>
+              <div className="relative w-full max-w-lg h-full flex items-center justify-center z-10 scale-75 sm:scale-90 lg:scale-100 xl:scale-110 origin-center transition-transform duration-500">
+                
+                {/* Hub Node */}
+                <motion.div 
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.8, ease: "easeOut" }}
+                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20"
+                >
+                  <div className="w-32 h-32 md:w-36 md:h-36 rounded-full bg-white/90 backdrop-blur-2xl border border-[#87A987]/40 shadow-[0_0_50px_rgba(135,169,135,0.25)] flex items-center justify-center relative group cursor-pointer">
+                    {/* Pulsing rings */}
+                    <motion.div 
+                      className="absolute inset-0 rounded-full border border-[#87A987]/40"
+                      animate={{ scale: [1, 1.5], opacity: [0.8, 0] }}
+                      transition={{ duration: 2.5, repeat: Infinity, ease: "easeOut" }}
+                    />
+                    <motion.div 
+                      className="absolute inset-0 rounded-full border border-[#87A987]/20"
+                      animate={{ scale: [1, 1.8], opacity: [0.8, 0] }}
+                      transition={{ duration: 2.5, delay: 1.25, repeat: Infinity, ease: "easeOut" }}
+                    />
+                    <span className="font-heading font-extrabold text-[#3D523D] tracking-wider text-xl group-hover:scale-105 transition-transform duration-500">
+                      GIRIRAJ
+                    </span>
+                  </div>
+                </motion.div>
 
+                {/* Animated Connections */}
+                <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible z-10">
+                  {[
+                    { x: 0, y: -175 },
+                    { x: 166, y: -54 },
+                    { x: 102, y: 141 },
+                    { x: -102, y: 141 },
+                    { x: -166, y: -54 }
+                  ].map((node, i) => (
+                    <g key={i}>
+                      <line 
+                        x1="50%" 
+                        y1="50%" 
+                        x2={`calc(50% + ${node.x}px)`} 
+                        y2={`calc(50% + ${node.y}px)`} 
+                        stroke="rgba(135,169,135,0.15)" 
+                        strokeWidth="2"
+                      />
+                      <motion.line 
+                        x1="50%" 
+                        y1="50%" 
+                        x2={`calc(50% + ${node.x}px)`} 
+                        y2={`calc(50% + ${node.y}px)`} 
+                        stroke="rgba(135,169,135,0.5)" 
+                        strokeWidth="2"
+                        strokeDasharray="6 12"
+                        initial={{ strokeDashoffset: 18 }}
+                        animate={{ strokeDashoffset: 0 }}
+                        transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+                      />
+                    </g>
+                  ))}
+                </svg>
+
+                {/* Orbiting Nodes */}
                 {[
-                  { name: 'Cloud', icon: Cloud, x: -130, y: -100 },
-                  { name: 'Security', icon: ShieldCheck, x: 130, y: -100 },
-                  { name: 'Compute', icon: ShieldCheck, x: -140, y: 80 },
-                  { name: 'Support', icon: Cpu, x: 140, y: 80 },
-                  { name: 'Systems', icon: Layers, x: 0, y: -160 }
+                  { name: 'Cloud', desc: 'Multi-cloud infrastructure solutions', icon: Cloud, x: 0, y: -175, delay: 0.1 },
+                  { name: 'Security', desc: 'Enterprise-grade protection systems', icon: ShieldCheck, x: 166, y: -54, delay: 0.2 },
+                  { name: 'Support', desc: '24/7 technical assistance', icon: Headphones, x: 102, y: 141, delay: 0.3 },
+                  { name: 'Compute', desc: 'High-performance computing resources', icon: Cpu, x: -102, y: 141, delay: 0.4 },
+                  { name: 'Systems', desc: 'Business-critical technology ecosystem', icon: Layers, x: -166, y: -54, delay: 0.5 }
                 ].map((node, i) => {
                   const NodeIcon = node.icon
                   return (
-                    <div key={i}>
-                      <svg className="absolute inset-0 w-full h-full pointer-events-none overflow-visible">
-                        <line 
-                          x1="50%" 
-                          y1="50%" 
-                          x2={`calc(50% + ${node.x}px)`} 
-                          y2={`calc(50% + ${node.y}px)`} 
-                          stroke="rgba(135,169,135,0.25)" 
-                          strokeWidth="1.5"
-                        />
-                      </svg>
-                      
-                      <div 
-                        className="absolute w-14 h-14 rounded-xl bg-white border border-[#87A987]/15 shadow-sm flex flex-col items-center justify-center text-[#3D523D] transition-transform duration-300 hover:scale-105"
-                        style={{
-                          left: `calc(50% + ${node.x - 28}px)`,
-                          top: `calc(50% + ${node.y - 28}px)`
-                        }}
+                    <div 
+                      key={i}
+                      className="absolute -translate-x-1/2 -translate-y-1/2 z-30"
+                      style={{
+                        left: `calc(50% + ${node.x}px)`,
+                        top: `calc(50% + ${node.y}px)`
+                      }}
+                    >
+                      <motion.div 
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: node.delay, duration: 0.6, ease: "easeOut" }}
+                        whileHover={{ scale: 1.05, y: -5 }}
+                        className="w-40 sm:w-44 rounded-2xl bg-white/80 backdrop-blur-xl border border-[#87A987]/20 shadow-[0_8px_30px_rgba(135,169,135,0.12)] p-4 flex flex-col items-center text-center group cursor-pointer"
                       >
-                        <NodeIcon size={20} className="text-[#87A987]" />
-                        <span className="text-[9px] font-bold uppercase mt-1 tracking-wider text-text-secondary">{node.name}</span>
-                      </div>
+                        <div className="w-12 h-12 rounded-full bg-[#FDFBF7] border border-[#87A987]/30 flex items-center justify-center mb-3 group-hover:bg-[#87A987] transition-colors duration-500">
+                          <NodeIcon className="w-5 h-5 text-[#87A987] group-hover:text-white transition-colors duration-500" />
+                        </div>
+                        <h3 className="text-sm font-bold text-[#3D523D] mb-1">{node.name}</h3>
+                        <p className="text-[10px] sm:text-xs text-text-secondary leading-tight">{node.desc}</p>
+                      </motion.div>
                     </div>
                   )
                 })}

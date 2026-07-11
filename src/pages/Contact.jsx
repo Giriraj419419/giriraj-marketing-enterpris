@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 import { FiCheck, FiMapPin, FiClock, FiPhone, FiMail, FiSettings, FiCloud, FiArrowRight, FiShield } from 'react-icons/fi'
 import AuroraSection from '../components/effects/AuroraSection'
+import SEO from '../components/SEO'
 
 // Consultation Components
 import ConsultationHero from '../components/consultation/ConsultationHero'
@@ -108,6 +109,7 @@ const Contact = () => {
 
   return (
     <AuroraSection intensity={0.9} className="bg-[#FDFBF7] min-h-screen">
+      <SEO title="Contact Us" description="Get in touch with Giriraj Marketing for enterprise software and infrastructure solutions." url="/contact-us" />
       <ConsultationHero />
 
       {/* Trust Strip */}

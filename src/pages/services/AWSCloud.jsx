@@ -6,6 +6,7 @@ import { FiArrowRight, FiCheck, FiCloud } from 'react-icons/fi';
 import { Reveal, SectionTitle, Eyebrow, StaggerContainer, StaggerItem, TextReveal } from '../../components/Section';
 import EnterpriseCTA from '../../components/EnterpriseCTA';
 import { AnimatedCounter, PremiumGlassCard, FloatingOrbs, OfficialLogoIcon } from '../../components/PremiumServiceComponents';
+import SEO from '../../components/SEO';
 
 // =========================================================================
 // DATA ARRAYS
@@ -36,6 +37,7 @@ export default function AWSCloud() {
 
   return (
     <div className="relative min-h-screen bg-bg-primary overflow-hidden selection:bg-accent/30 selection:text-text-primary">
+      <SEO title="AWS Cloud Services" description="Build, scale, and optimize your enterprise applications on Amazon Web Services." url="/services/aws-cloud" />
 
       {/* Background */}
       <FloatingOrbs />
@@ -149,7 +151,7 @@ export default function AWSCloud() {
           </div>
 
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8" staggerChildren={0.1}>
-            {reasons.map((r, i) => (
+            {reasons.map((r) => (
               <StaggerItem key={r.title} direction="up">
                 <PremiumGlassCard className="p-10 h-full flex flex-col min-h-[280px]">
                   <h3 className="text-xl font-bold text-text-primary mb-4">{r.title}</h3>

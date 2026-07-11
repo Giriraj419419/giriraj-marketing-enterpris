@@ -6,6 +6,7 @@ import { FiArrowRight, FiCheck, FiCloud } from 'react-icons/fi';
 import { Reveal, SectionTitle, Eyebrow, StaggerContainer, StaggerItem, TextReveal } from '../../components/Section';
 import EnterpriseCTA from '../../components/EnterpriseCTA';
 import { AnimatedCounter, PremiumGlassCard, FloatingOrbs, OfficialLogoIcon } from '../../components/PremiumServiceComponents';
+import SEO from '../../components/SEO';
 
 // =========================================================================
 // DATA ARRAYS
@@ -33,7 +34,8 @@ export default function MicrosoftAzure() {
   const yParallax = useTransform(scrollY, [0, 1000], [0, -100]);
 
   return (
-    <div className="relative min-h-screen bg-bg-primary overflow-hidden selection:bg-accent/30 selection:text-text-primary">
+    <div className="relative min-h-screen bg-bg-primary overflow-hidden selection:bg-[#0078D4]/30 selection:text-text-primary">
+      <SEO title="Microsoft Azure" description="Deploy secure, scalable infrastructure on Microsoft Azure with our certified cloud architects." url="/services/microsoft-azure" />
 
       {/* Background */}
       <FloatingOrbs />

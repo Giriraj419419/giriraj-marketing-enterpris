@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useAurora } from '../../context/AuroraContext'
 
 const AuroraBackground = () => {
+  const containerRef = useRef(null)
   const reduced = useReducedMotion()
-  const { intensity, theme, mousePosition } = useAurora()
+  const { intensity, mousePosition } = useAurora()
   const [mounted, setMounted] = useState(false)
 
   // Avoid hydration mismatch by waiting for mount

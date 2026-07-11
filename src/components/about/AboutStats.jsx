@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
+import { useInView } from 'framer-motion'
 import { FadeIn } from '../AnimatedText'
 
 const Counter = ({ from = 0, to, duration = 2, suffix = '' }) => {

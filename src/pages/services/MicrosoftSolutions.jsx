@@ -7,6 +7,7 @@ import EnterpriseCTA from '../../components/EnterpriseCTA';
 import { Reveal, SectionTitle, Eyebrow, StaggerContainer, StaggerItem, TextReveal } from '../../components/Section';
 
 import { AnimatedCounter, PremiumGlassCard, FloatingOrbs, OfficialLogoIcon } from '../../components/PremiumServiceComponents';
+import SEO from '../../components/SEO';
 
 // =========================================================================
 // DATA
@@ -31,7 +32,8 @@ export default function MicrosoftSolutions() {
   const yParallax = useTransform(scrollY, [0, 1000], [0, -100]);
 
   return (
-    <div className="relative min-h-screen bg-bg-primary overflow-hidden selection:bg-accent/30 selection:text-text-primary">
+    <div className="relative min-h-screen bg-bg-primary overflow-hidden selection:bg-[#0078D4]/30 selection:text-text-primary">
+      <SEO title="Microsoft Solutions" description="Enhance productivity and security with comprehensive Microsoft enterprise solutions." url="/services/microsoft" />
       
       {/* Background */}
       <FloatingOrbs />

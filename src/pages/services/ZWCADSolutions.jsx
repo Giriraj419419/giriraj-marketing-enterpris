@@ -6,6 +6,7 @@ import { FiArrowRight, FiCheck, FiLayers } from 'react-icons/fi';
 import { Reveal, SectionTitle, Eyebrow, StaggerContainer, StaggerItem, TextReveal } from '../../components/Section';
 import EnterpriseCTA from '../../components/EnterpriseCTA';
 import { AnimatedCounter, PremiumGlassCard, FloatingOrbs, OfficialLogoIcon } from '../../components/PremiumServiceComponents';
+import SEO from '../../components/SEO';
 
 // =========================================================================
 // DATA ARRAYS
@@ -35,7 +36,8 @@ export default function ZWCADSolutions() {
   const yParallax = useTransform(scrollY, [0, 1000], [0, -100]);
 
   return (
-    <div className="relative min-h-screen bg-bg-primary overflow-hidden selection:bg-accent/30 selection:text-text-primary">
+    <div className="relative min-h-screen bg-bg-primary overflow-hidden selection:bg-[#003B7E]/30 selection:text-text-primary">
+      <SEO title="ZWCAD Solutions" description="Reliable DWG compatible CAD software with ZWCAD enterprise licenses." url="/services/zwcad" />
 
       {/* Background */}
       <FloatingOrbs />

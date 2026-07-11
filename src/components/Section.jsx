@@ -8,7 +8,6 @@ export function Reveal({
   delay = 0,
   className = '',
   direction = 'up',
-  duration = 0.6,
 }) {
   const shouldReduceMotion = useReducedMotion();
 

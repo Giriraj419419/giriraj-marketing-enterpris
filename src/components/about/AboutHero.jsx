@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion'
 import { FadeIn, TextReveal } from '../AnimatedText'
 import { MagneticButton } from '../MagneticButton'
 

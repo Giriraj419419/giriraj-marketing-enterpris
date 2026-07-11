@@ -11,7 +11,7 @@ const meetingTypes = [
   { id: 'office', label: 'Office Visit', icon: FiMapPin, desc: '713, Shilp Arista, Ahmedabad' }
 ]
 
-const ConsultationScheduler = ({ formData, updateFormData, onNext, onBack, isSubmitting }) => {
+const ConsultationScheduler = ({ formData, updateFormData, onBack, isSubmitting }) => {
   const handleDateSelect = (day) => {
     updateFormData({ meetingDate: day })
   }
